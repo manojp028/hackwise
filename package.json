@@ -1,0 +1,13 @@
+{
+  "name": "elearning-platform",
+  "version": "1.0.0",
+  "description": "Full-stack MERN e-learning platform",
+  "scripts": {
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\"",
+    "build": "cd client && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

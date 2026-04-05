@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track  { background: #e2e8f0; }
+  ::-webkit-scrollbar-thumb  { background: #a5b4fc; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #6366f1; }
+}
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(99, 102, 241, 0.12);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  }
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(99, 102, 241, 0.15);
+    box-shadow: 0 4px 24px rgba(99, 102, 241, 0.08);
+  }
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-500 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 active:scale-95 shadow-md shadow-primary-200;
+  }
+  .btn-ghost {
+    @apply bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium px-5 py-2.5 rounded-xl transition-all duration-200 border border-slate-200;
+  }
+  .input-field {
+    @apply w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-400/40 focus:border-primary-400 transition-all duration-200 shadow-sm;
+  }
+  .card {
+    @apply glass rounded-2xl p-6 hover:border-primary-200 hover:shadow-md transition-all duration-300;
+  }
+  .tag {
+    @apply text-xs font-medium px-2.5 py-1 rounded-full;
+  }
+}
+
+/* Page background */
+.gradient-bg {
+  background: linear-gradient(135deg, #f1f5f9 0%, #ede9fe 50%, #e0f2fe 100%);
+  min-height: 100vh;
+}
+
+/* Navbar */
+nav.sticky {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.1) !important;
+}
+
+/* Text overrides */
+h1, h2, h3, h4, h5     { color: #1e293b; }
+.text-gray-400          { color: #64748b !important; }
+.text-gray-500          { color: #94a3b8 !important; }
+.text-gray-600          { color: #475569 !important; }
+.text-gray-300          { color: #334155 !important; }
+.text-gray-200          { color: #1e293b  !important; }
+.text-white             { color: #1e293b  !important; }
+.btn-primary,
+.btn-primary *          { color: #ffffff  !important; }
+.text-primary-300       { color: #4f46e5  !important; }
+.text-primary-400       { color: #6366f1  !important; }
+
+/* White/dark bg → light tints */
+.bg-white\/5            { background-color: rgba(99,102,241,0.05) !important; }
+.bg-white\/3            { background-color: rgba(99,102,241,0.03) !important; }
+.bg-white\/8            { background-color: rgba(99,102,241,0.06) !important; }
+.bg-white\/10           { background-color: rgba(99,102,241,0.08) !important; }
+.bg-white\/15           { background-color: rgba(99,102,241,0.10) !important; }
+.hover\:bg-white\/5:hover   { background-color: rgba(99,102,241,0.05) !important; }
+.hover\:bg-white\/10:hover  { background-color: rgba(99,102,241,0.08) !important; }
+.hover\:bg-white\/8:hover   { background-color: rgba(99,102,241,0.06) !important; }
+
+/* White borders → slate */
+.border-white\/5        { border-color: rgba(148,163,184,0.20) !important; }
+.border-white\/8        { border-color: rgba(148,163,184,0.25) !important; }
+.border-white\/10       { border-color: rgba(148,163,184,0.30) !important; }
+.border-white\/15       { border-color: rgba(148,163,184,0.40) !important; }
+.hover\:border-white\/15:hover { border-color: rgba(99,102,241,0.30) !important; }
+
+/* Dark gradient sections */
+.bg-primary-900\/20     { background-color: rgba(99,102,241,0.06) !important; }
+.bg-primary-900\/30     { background-color: rgba(99,102,241,0.08) !important; }
+.bg-primary-900\/40     { background-color: rgba(99,102,241,0.10) !important; }
+.bg-primary-900\/50     { background-color: rgba(99,102,241,0.12) !important; }
+.bg-violet-900\/10      { background-color: rgba(124,58,237,0.04) !important; }
+.bg-violet-900\/20      { background-color: rgba(124,58,237,0.06) !important; }
+.from-primary-900\/20   { --tw-gradient-from: rgba(99,102,241,0.06) !important; }
+.from-primary-900\/40   { --tw-gradient-from: rgba(99,102,241,0.10) !important; }
+.to-violet-900\/10      { --tw-gradient-to:   rgba(124,58,237,0.04) !important; }
+.to-violet-900\/20      { --tw-gradient-to:   rgba(124,58,237,0.06) !important; }
+
+/* Quiz / challenge panels */
+.bg-primary-600\/30     { background-color: rgba(99,102,241,0.12) !important; }
+.border-primary-500\/50 { border-color: rgba(99,102,241,0.40) !important; }
+.border-primary-500\/60 { border-color: rgba(99,102,241,0.50) !important; }
+.bg-black\/40           { background-color: rgba(0,0,0,0.12)  !important; }
+.bg-\[\#1a1a2e\]        { background-color: #ffffff           !important; }
+
+/* Category colour chips */
+.bg-violet-500\/20   { background-color: #ede9fe !important; }
+.text-violet-300     { color: #7c3aed !important; }
+.border-violet-500\/30 { border-color: #c4b5fd !important; }
+
+.bg-blue-500\/20     { background-color: #dbeafe !important; }
+.text-blue-300       { color: #1d4ed8 !important; }
+.text-blue-400       { color: #2563eb !important; }
+.border-blue-500\/30 { border-color: #93c5fd !important; }
+
+.bg-emerald-500\/20  { background-color: #d1fae5 !important; }
+.bg-emerald-500\/10  { background-color: #ecfdf5 !important; }
+.text-emerald-300    { color: #065f46 !important; }
+.text-emerald-400    { color: #059669 !important; }
+.border-emerald-500\/30 { border-color: #6ee7b7 !important; }
+
+.bg-orange-500\/10   { background-color: #fff7ed !important; }
+.text-orange-400     { color: #c2410c !important; }
+.border-orange-500\/20 { border-color: #fed7aa !important; }
+
+.bg-amber-500\/10    { background-color: #fffbeb !important; }
+.text-amber-300      { color: #92400e !important; }
+.text-amber-400      { color: #d97706 !important; }
+.border-amber-500\/30 { border-color: #fcd34d !important; }
+
+.bg-red-500\/10      { background-color: #fef2f2 !important; }
+.text-red-300        { color: #991b1b !important; }
+.text-red-400        { color: #dc2626 !important; }
+.text-red-500        { color: #ef4444 !important; }
+.border-red-500\/20  { border-color: #fca5a5 !important; }
+
+.bg-yellow-500\/10   { background-color: #fefce8 !important; }
+.text-yellow-400     { color: #a16207 !important; }
+.border-yellow-500\/20 { border-color: #fde047 !important; }
+
+.bg-cyan-500\/20     { background-color: #cffafe !important; }
+.text-cyan-300       { color: #0e7490 !important; }
+.border-cyan-500\/30 { border-color: #67e8f9 !important; }
+
+.bg-green-500\/20    { background-color: #dcfce7 !important; }
+.text-green-300      { color: #166534 !important; }
+.border-green-500\/30 { border-color: #86efac !important; }
+
+/* Toast notifications */
+.bg-emerald-900\/90  { background-color: #d1fae5 !important; }
+.bg-red-900\/90      { background-color: #fee2e2 !important; }
+.bg-amber-900\/90    { background-color: #fef3c7 !important; }
+.bg-primary-900\/90  { background-color: #e0e7ff !important; }
+.text-emerald-100    { color: #065f46   !important; }
+.text-red-100        { color: #991b1b   !important; }
+.text-amber-100      { color: #78350f   !important; }
+.text-primary-100    { color: #3730a3   !important; }
+
+/* Glow effects (softened) */
+.glow-purple { box-shadow: 0 0 40px rgba(99,102,241,0.08); }
+.glow-orange { box-shadow: 0 0 40px rgba(249,115,22,0.08); }
+
+/* Fire animation */
+.fire-pulse {
+  animation: firePulse 1.5s ease-in-out infinite;
+}
+@keyframes firePulse {
+  0%, 100% { transform: scale(1) rotate(-2deg); }
+  50%       { transform: scale(1.15) rotate(2deg); }
+}
+
+/* Page transitions */
+.page-enter    { animation: slideUp 0.3s ease-out; }
+.animate-fade-in  { animation: fadeIn 0.3s ease-out; }
+.animate-slide-up { animation: slideUp 0.35s ease-out; }
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
